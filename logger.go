@@ -1,5 +1,7 @@
 package rmlogger
 
+var Logs Logger
+
 type Logger struct {
 	colors     *colors
 	apiName    string
@@ -7,15 +9,15 @@ type Logger struct {
 }
 
 func Define(an string, av string) *Logger {
-	logs := Logger{}
+	Logs = Logger{}
 
 	if an != "" {
-		logs.apiName = an
+		Logs.apiName = an
 	}
 
 	if av != "" {
-		logs.apiVersion = av
+		Logs.apiVersion = av
 	}
 
-	return &logs
+	return &Logs
 }

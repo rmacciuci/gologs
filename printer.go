@@ -1,4 +1,4 @@
-package rmlogger
+package gologs
 
 import "log"
 

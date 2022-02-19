@@ -1,9 +1,9 @@
-package rmlogger
+package gologs
 
 var Logs Logger
 
 type Logger struct {
-	colors     *colors
+	Colors     *colors
 	apiName    string
 	apiVersion string
 }
@@ -18,6 +18,9 @@ func Define(an string, av string) *Logger {
 	if av != "" {
 		Logs.apiVersion = av
 	}
+
+	// Set Colors
+	Logs.Colors = NewColors()
 
 	return &Logs
 }

@@ -1,3 +1,3 @@
-module github.com/Rmacciuci/rm_logger
+module github.com/Rmacciuci/gologs
 
 go 1.16

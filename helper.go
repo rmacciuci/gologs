@@ -10,13 +10,13 @@ func logPrefix(l *Logger, t string) string {
 
 	switch t {
 	case "info":
-		clr = l.colors.info
+		clr = l.Colors.Info
 	case "warn":
-		clr = l.colors.warning
+		clr = l.Colors.Warning
 	case "err":
-		clr = l.colors.error
+		clr = l.Colors.Error
 	case "ftl":
-		clr = l.colors.fatal
+		clr = l.Colors.Fatal
 	default:
 		log.Fatalln("Error en el tipo ingresado")
 	}

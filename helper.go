@@ -2,28 +2,29 @@ package gologs
 
 import (
 	"fmt"
-	"github.com/rmacciuci/gologs/colors"
+	"github.com/rmacciuci/gologs/pkg/colors"
 )
 
 func logPrefix(l *Logger, t string) string {
-	var clr string
+
+	return fmt.Sprintf("%s (v: %s) - [%s] - ", l.apiName, l.apiVersion, l.getTagColor(t))
+}
+
+func (l *Logger) getTagColor(t interface{}) string {
+	var c string
 
 	switch t {
 	case "info":
-		clr = l.colors.Info
+		c = l.colors.Info
 	case "warn":
-		clr = l.colors.Warning
-	case "err":
-		clr = l.colors.Error
-	case "ftl":
-		clr = l.colors.Fatal
+		c = l.colors.Warning
+	case "error":
+		c = l.colors.Error
+	case "fatal":
+		c = l.colors.Fatal
 	default:
-		clr = l.colors.Info
+		c = l.colors.Info
 	}
 
-	return fmt.Sprintf("%s (v: %s) - [%s] - ", l.apiName, l.apiVersion, getColor(clr, t))
-}
-
-func getColor(c string, i interface{}) string {
-	return fmt.Sprintf("%s%s%s", c, i, colors.GetReset())
+	return fmt.Sprintf("%s%s%s", c, t, colors.GetReset())
 }

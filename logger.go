@@ -1,7 +1,7 @@
 package gologs
 
 import (
-	"github.com/Rmacciuci/gologs/colors"
+	"github.com/rmacciuci/gologs/colors"
 )
 
 type Logger struct {

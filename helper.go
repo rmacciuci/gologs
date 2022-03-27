@@ -2,7 +2,7 @@ package gologs
 
 import (
 	"fmt"
-	"github.com/Rmacciuci/gologs/colors"
+	"github.com/rmacciuci/gologs/colors"
 	"log"
 )
 

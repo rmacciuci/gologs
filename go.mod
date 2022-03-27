@@ -1,3 +1,3 @@
-module github.com/Rmacciuci/gologs
+module github.com/rmacciuci/gologs
 
-go 1.16
+go 1.17

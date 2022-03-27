@@ -3,7 +3,6 @@ package gologs
 import (
 	"fmt"
 	"github.com/rmacciuci/gologs/colors"
-	"log"
 )
 
 func logPrefix(l *Logger, t string) string {
@@ -19,7 +18,7 @@ func logPrefix(l *Logger, t string) string {
 	case "ftl":
 		clr = l.colors.Fatal
 	default:
-		log.Fatalln("Error en el tipo ingresado")
+		clr = l.colors.Info
 	}
 
 	return fmt.Sprintf("%s (v: %s) - [%s] - ", l.apiName, l.apiVersion, getColor(clr, t))

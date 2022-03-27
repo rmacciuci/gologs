@@ -3,7 +3,7 @@ package gologs
 import "log"
 
 func (l *Logger) Info(d interface{}) {
-	log.SetPrefix(logPrefix(l, "info222"))
+	log.SetPrefix(logPrefix(l, "info"))
 	log.Println(d)
 }
 

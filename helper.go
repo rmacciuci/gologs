@@ -2,6 +2,7 @@ package gologs
 
 import (
 	"fmt"
+	"github.com/Rmacciuci/gologs/colors"
 	"log"
 )
 
@@ -10,13 +11,13 @@ func logPrefix(l *Logger, t string) string {
 
 	switch t {
 	case "info":
-		clr = l.Colors.Info
+		clr = l.colors.Info
 	case "warn":
-		clr = l.Colors.Warning
+		clr = l.colors.Warning
 	case "err":
-		clr = l.Colors.Error
+		clr = l.colors.Error
 	case "ftl":
-		clr = l.Colors.Fatal
+		clr = l.colors.Fatal
 	default:
 		log.Fatalln("Error en el tipo ingresado")
 	}
@@ -25,5 +26,5 @@ func logPrefix(l *Logger, t string) string {
 }
 
 func getColor(c string, i interface{}) string {
-	return fmt.Sprintf("%s%s%s", c, i, reset)
+	return fmt.Sprintf("%s%s%s", c, i, colors.GetReset())
 }

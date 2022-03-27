@@ -1,26 +1,28 @@
 package gologs
 
-var Logs Logger
+import (
+	"github.com/Rmacciuci/gologs/colors"
+)
 
 type Logger struct {
-	Colors     *colors
+	colors     *colors.Colors
 	apiName    string
 	apiVersion string
 }
 
-func Define(an string, av string) *Logger {
-	Logs = Logger{}
+func Define(an string, av string) Logger {
+	l := Logger{}
 
 	if an != "" {
-		Logs.apiName = an
+		l.apiName = an
 	}
 
 	if av != "" {
-		Logs.apiVersion = av
+		l.apiVersion = av
 	}
 
 	// Set Colors
-	Logs.Colors = NewColors()
+	l.colors = colors.InitDefault()
 
-	return &Logs
+	return l
 }
